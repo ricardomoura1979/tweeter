@@ -1,0 +1,44 @@
+.articleTweets {
+  display: flex;
+  flex-direction: column;
+  border: 5px solid black;
+
+}
+
+.avatarIcon {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding-left: 1em
+}
+
+.footerArticleTweets {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-top: 1em;
+  margin-bottom: 1em
+}
+
+.hoverIcons :hover{
+  color: brown;
+  cursor: pointer;
+}
+
+
+.headerArticleTweets {
+  display: flex;
+  justify-content: space-between;
+
+
+}
+
+.sectionTweets {
+  border-bottom: 5px solid black;
+  margin-top: 1em;
+  padding: 40px 0px;
+  margin-left: 40px;
+  margin-right: 40px;
+
+
+}
