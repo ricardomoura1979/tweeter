@@ -1,0 +1,22 @@
+#submit {
+  display: flex;
+  font-family: 'Bungee', cursive;
+  color: white;
+  background-color: blue;
+}
+
+#tweet-text {
+  width: 100%;
+  border-bottom: 5px solid black;
+  border-right: 0;
+  border-left: 0;
+  border-top: 0;
+  background-color: transparent;
+  outline: none;
+}
+
+.buttonForm {
+  display: flex;
+  justify-content: space-between;
+} 
+
