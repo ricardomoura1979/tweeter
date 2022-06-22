@@ -87,7 +87,8 @@ loadTweets()
     <span>${tweet.user.handle}</span>
   </header>
   <section class="sectionTweets">
-    ${tweet.content.text}
+    ${escape(tweet.content.text)}
+
   </section>
   <footer class="footerArticleTweets">
   
@@ -104,7 +105,13 @@ loadTweets()
     return $tweet;
   }
 
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
 
+  
 
   const renderTweets = function(tweets) {
     for (const tweetObj of tweets) {
