@@ -122,7 +122,7 @@ loadTweets()
     const text = $("#tweet-text").val()
       if (text == "") {
         alert('Tweet is empty!');
-        return;
+        return; 
       } 
       if (text.length > 140) {
         alert('Your tweet is too long!');
