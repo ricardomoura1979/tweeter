@@ -22,60 +22,60 @@ $(document).ready(function () {
     created_at: 1461116232227
   };
 
-/*   const data = [
-    {
-      user: {
-        name: "Newton",
-        avatars: "https://i.imgur.com/73hZDYK.png"
-        ,
-        handle: "@SirIsaac"
+  /*   const data = [
+      {
+        user: {
+          name: "Newton",
+          avatars: "https://i.imgur.com/73hZDYK.png"
+          ,
+          handle: "@SirIsaac"
+        },
+        content: {
+          text: "If I have seen further it is by standing on the shoulders of giants"
+        },
+        created_at: 1461116232227
       },
-      content: {
-        text: "If I have seen further it is by standing on the shoulders of giants"
+      {
+        user: {
+          name: "Descartes",
+          avatars: "https://i.imgur.com/nlhLi3I.png",
+          handle: "@rd"
+        },
+        content: {
+          text: "Je pense , donc je suis"
+        },
+        created_at: 1461113959088
       },
-      created_at: 1461116232227
-    },
-    {
-      user: {
-        name: "Descartes",
-        avatars: "https://i.imgur.com/nlhLi3I.png",
-        handle: "@rd"
-      },
-      content: {
-        text: "Je pense , donc je suis"
-      },
-      created_at: 1461113959088
-    },
-
-    {
-      user: {
-        name: "Another User",
-        avatars: "https://i.imgur.com/nlhLi3I.png",
-        handle: "@anotheruser"
-      },
-      content: {
-        text: "aaaaaaaaa , xxxxxxxxxxxxxxx"
-      },
-      created_at: 1111111111111111
-    },
- 
-  ] */
-
   
-//function to load tweets
+      {
+        user: {
+          name: "Another User",
+          avatars: "https://i.imgur.com/nlhLi3I.png",
+          handle: "@anotheruser"
+        },
+        content: {
+          text: "aaaaaaaaa , xxxxxxxxxxxxxxx"
+        },
+        created_at: 1111111111111111
+      },
+   
+    ] */
 
-function loadTweets() { 
-  $.ajax('/tweets', {method: 'GET'})
-  .then((data) => {
-   console.log(data);
-   renderTweets(data);
-  });
- 
-}
 
-loadTweets()
+  //function to load tweets
 
-// function that takes in a tweet object and is responsible for returning a tweet
+  function loadTweets() {
+    $.ajax('/tweets', { method: 'GET' })
+      .then((data) => {
+        console.log(data);
+        renderTweets(data);
+      });
+
+  }
+
+  loadTweets();
+
+  // function that takes in a tweet object and is responsible for returning a tweet
   function createTweetElement(tweet) {
 
     const $tweet = $(`<article class="articleTweets">
@@ -104,14 +104,34 @@ loadTweets()
 </article>`);
     return $tweet;
   }
+//adde when the form is over 140 characters. Added a class called warning140 to css style
+  function createElement() {
+  if ($('.warning140').length > 0) {
+    return $("")
 
-  const escape = function (str) {
+  } else {
+    const $error = $(
+    `<div class = "warning140"> 
+      <p class = "textExcessOfCharacters"> <i class="fa-solid fa-triangle-exclamation"> </i> Excess of Characters (Max. 140)</p>
+    </div>`)
+    return $error;
+  }
+  }
+  //added when the form is empty. Added a class called warning140 to css style. Adde text class called textMiddle
+  function createElementEmpty() {
+    const $error = $(
+      `<div class = "warningEmpty"> 
+      
+        <p class = "textEmpty"> <i class="fa-solid fa-triangle-exclamation"> </i> Your message cannot be empty</p>
+      </div>`)
+      return $error;
+    }
+  const escape = function(str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   };
 
-  
 
   const renderTweets = function(tweets) {
     for (const tweetObj of tweets) {
@@ -123,25 +143,27 @@ loadTweets()
     // calls createTweetElement for each tweet
     // takes return value and appends it to the tweets container
   };
- // submitted data to ajax to return as asynchronous activity.
+  // submitted data to ajax to return as asynchronous activity.
   $('form').submit(function(event) {
     event.preventDefault();
+    const $errorElement = createElement();
+    const $errorElementEmpty = createElementEmpty();
     const text = $("#tweet-text").val()
-      if (text == "") {
-        alert('Tweet is empty!');
-        return; 
-      } 
-      if (text.length > 140) {
-        alert('Your tweet is too long!');
-        return; 
-      }
-      
+    if (text == "") {
+      $('#error').append($errorElementEmpty);
+      return;
+    }
+    if (text.length > 140) {
+      $('#error').append($errorElement);
+      return;
+    }
+
 
 
     const data = $(this).serialize();
 
 
-    $.ajax('/tweets', {method: 'POST', data})
+    $.ajax('/tweets', { method: 'POST', data })
       .then(() => {
         $("#tweet-text").val("");
         //we need to refetch tweets on Success
@@ -149,9 +171,9 @@ loadTweets()
         loadTweets();
       });
 
-  }) 
+  })
 
-/*   renderTweets(data); */
+  /*   renderTweets(data); */
 
   // Test / driver code (temporary)
   //console.log($tweet); // to see what it looks like
