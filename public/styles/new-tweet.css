@@ -20,3 +20,50 @@
   justify-content: space-between;
 } 
 
+.warning140 {
+  width: 100%;
+  background-color: transparent;
+  
+} 
+
+.warningEmpty {
+  width: 100%;
+  background-color: transparent;
+  
+} 
+
+.textEmpty {
+  width: 100%;
+  border: 5px solid rgb(214, 18, 18);
+  background-color: transparent;
+  color: rgb(225, 63, 14);
+  font-weight: 600;
+  padding-bottom: 2em;
+
+  
+}
+
+
+.warningEmpty .fa-solid {
+  padding-left: 2em;
+  padding-top: 2em;
+  color: orange;
+  
+  
+}
+.textExcessOfCharacters {
+  width: 100%;
+  border: 5px solid rgb(214, 18, 18);
+  background-color: transparent;
+  color: rgb(225, 63, 14);
+  font-weight: 600;
+  padding-bottom: 2em;
+}
+
+.textExcessOfCharacters .fa-solid {
+  padding-left: 2em;
+  padding-top: 1em;
+  color: orange;
+  
+  
+}
