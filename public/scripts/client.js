@@ -107,7 +107,7 @@ $(document).ready(function () {
 //adde when the form is over 140 characters. Added a class called warning140 to css style
   function createElement() {
   if ($('.warning140').length > 0) {
-    return $("")
+    return $("");
 
   } else {
     const $error = $(
@@ -115,10 +115,14 @@ $(document).ready(function () {
       <p class = "textExcessOfCharacters"> <i class="fa-solid fa-triangle-exclamation"> </i> Excess of Characters (Max. 140)</p>
     </div>`)
     return $error;
-  }
+   }
   }
   //added when the form is empty. Added a class called warning140 to css style. Adde text class called textMiddle
   function createElementEmpty() {
+    if ($('.warningEmpty').length > 0) {
+      return $("");
+
+    } else {
     const $error = $(
       `<div class = "warningEmpty"> 
       
@@ -126,6 +130,7 @@ $(document).ready(function () {
       </div>`)
       return $error;
     }
+  }
   const escape = function(str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
