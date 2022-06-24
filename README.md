@@ -18,3 +18,9 @@ This repository is the starter code for the project: Students will fork and clon
 - Node.js
 - Body-parser
 - Chance
+
+
+!["Screenshot of Tweeter Front End"](https://github.com/ricardomoura1979/tweeter/blob/master/docs/tweeter-front-end.png)
+!["Screenshot of Mobile Version"](https://github.com/ricardomoura1979/tweeter/blob/master/docs/mobile-feature.png)
+!["Screenshot of how to send a message"](https://github.com/ricardomoura1979/tweeter/blob/master/docs/takes-action.png)
+!["Screenshot of Tweeter message"](https://github.com/ricardomoura1979/tweeter/blob/master/docs/spread-your-messages.png)
