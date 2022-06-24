@@ -1,5 +1,35 @@
- 
+
 .header {
+    width: 100%;
+    background-color: #186d0c;
+    padding-top: 5em;
+    color:white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url("https://www.transparenttextures.com/patterns/3px-tile.png");
+    margin-right: 50px;
+
+    }
+    
+    .profileIMage{
+      max-width:120px;
+      justify-content: center;
+      flex-direction: column;
+    }
+    
+    .profileIMage img {
+      width: 100%;
+    }
+    
+    .profileName{
+      font-size:1.2em; 
+    }
+ 
+
+/* Tablet: minimum width of 768px to maximum width of 1024px */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .header {
     width: 100%;
     background-color: #186d0c;
     padding-top: 5em;
@@ -24,3 +54,35 @@
     .profileName{
       font-size:1.2em; 
     }
+  }
+
+
+ /* Laptops / Desktops: minimum width of 1024px */
+ @media only screen and (min-width: 1024px) and (max-width: 2048px) {
+  .header {
+    width: 33%;
+    background-color: #186d0c;
+    padding-top: 5em;
+    border-left: 5em;
+    color:white;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    background-image: url("https://www.transparenttextures.com/patterns/3px-tile.png");
+
+    }
+    
+    .profileIMage{
+      max-width:120px;
+      justify-content: center;
+      flex-direction: column;
+    }
+    
+    .profileIMage img {
+      width: 100%;
+    }
+    
+    .profileName{
+      font-size:1.2em; 
+    }
+  }
