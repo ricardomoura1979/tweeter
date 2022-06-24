@@ -2,7 +2,7 @@
   display: flex;
   font-family: 'Bungee', cursive;
   color: white;
-  background-color: blue;
+  background: linear-gradient(to right, rgb(23, 12, 147), rgb(6, 158, 223));
 }
 
 #tweet-text {
@@ -35,8 +35,8 @@
 .textEmpty {
   width: 100%;
   border: 5px solid rgb(214, 18, 18);
-  background-color: transparent;
-  color: rgb(225, 63, 14);
+  background: linear-gradient(to right, red, rgb(255, 136, 0));
+  color: rgb(255, 255, 255);
   font-weight: 600;
   padding-bottom: 2em;
 
@@ -54,8 +54,8 @@
 .textExcessOfCharacters {
   width: 100%;
   border: 5px solid rgb(214, 18, 18);
-  background-color: transparent;
-  color: rgb(225, 63, 14);
+  background: linear-gradient(to right, red, rgb(255, 136, 0));
+  color: rgb(255, 255, 255);
   font-weight: 600;
   padding-bottom: 2em;
 }
