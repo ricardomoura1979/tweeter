@@ -24,10 +24,33 @@ body {
 
 .container {
   color: #545149;
-  width: 90%;
-  margin-left: 2em
+  display: flex;
+  margin-top: 150px;
+  width: 90vw;
+  
 }
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+/* Mobile */
+@media only screen and (min-width: 320px) and (max-width: 768px) { 
+  .container {
+    display: block;
+    width: 100vw;
+    margin-top: auto;
+  }
+
+}
+/* Tablet: minimum width of 768px to maximum width of 1024px */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+.container {
+  display: block;
+  width: 100vw;
+  margin-top: auto;
+}
+
+}
+
+
+  
